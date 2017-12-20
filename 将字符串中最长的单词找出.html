@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		var str = "12abd";
+		var str2 = str.match(/[0-9a-z]+/g);
+		console.log(str2) 
+
+function LongestWord(sen) { 
+
+  var arr = sen.match(/[a-z0-9]+/gi);// 使用正则的匹配将匹配成功后的内容放进数组中
+  var sorted = arr.sort(function(a, b) {
+      return b.length - a.length;
+  });
+  return sorted[0];
+}
+   
+console.log(LongestWord("the $$$longest# word is coderbyte"));          
+
+
+	</script>
+</body>
+</html>
