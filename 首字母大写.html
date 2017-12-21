@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		function LetterCapitalize(str) {
+			var ary = str.split(" ");
+			for(var i=0;i<ary.length;i++){
+				if(ary[i].length >1 ){
+                        ary[i] = ary[i].charAt(0).toLocaleUpperCase() + ary[i].substring(1) 
+				}else{
+					ary[i] = ary[i].charAt(0).toLocaleUpperCase() 
+				}
+			}
+			return ary.join(" ");
+		}
+        console.log(LetterCapitalize('i ran three'));     
+
+
+		//使用正则的方式求解 \b匹配边界值  正则的replace 将匹配的内容用return的值进行替换
+		function LetterCapitalize2(str){
+			var reg = /\b[a-z]/gi;
+			return str.replace(reg,function(arg1,arg2){//arg1是大正则匹配到的内容
+				return arg1.toLocaleUpperCase();
+			})
+		}
+
+		console.log(LetterCapitalize2('i run five')); 
+
+		
+	</script>
+</body>
+</html>
